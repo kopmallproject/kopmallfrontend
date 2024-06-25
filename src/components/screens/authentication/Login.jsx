@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <>
         <div className="flex flex-row ">
-            <div className="w-[100%] left_wrapper lg:w-[50%] bg-[#25133A] px-7 lg:px-[7%] py-[50px] flex flex-col justify-center">
+            <div className="w-[100%] left_wrapper lg:w-[50%] bg-[#25133A] px-7 lg:px-[7%] lg:py-[50px] pt-[20px] pb-[50px] flex flex-col lg:justify-center ">
                 <div className="">
                     <h1 className='text-[20px] font-weight-700 mb-[30px] text-[#FFFFFF] '>KOP Mall</h1>
                     <div className=" mb-[20px]">
