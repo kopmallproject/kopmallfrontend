@@ -11,7 +11,7 @@ const Header2 = () => {
   return (
     <>
         <header className='w-full lg:h-28 h-14 lg:border-b-[1px] border-b-gray relative'>
-            <div className="max-w-screen-2xl h-full mx-auto lg:px-28 p-5 flex items-center justify-between">
+            <div className="max-w-screen-2xl h-full mx-auto lg:px-28 px-[5%] py-5 flex items-center justify-between">
                 <div className='flex items-center gap-6 '>
                     <FontAwesomeIcon icon={faHamburger}  className='lg:hidden'/>
                     <h1 className='text-[20x] lg:text-3xl uppercase font-bold'>
@@ -43,7 +43,7 @@ const Header2 = () => {
                             </a>
 
                             <div className="sub_menu subMenu">
-                                <div className="card">
+                                <div className="card ">
                                     <a href="" className="">
                                         <span className='text-md text-[#FCB349]'>Lorem</span>
                                     </a>
