@@ -1,6 +1,8 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons' 
 import React from 'react'
+
 
 const Footer = () => {
   return (
@@ -65,7 +67,7 @@ const Footer = () => {
                     <div className="mt-6 flex flex-col gap-4 text-[16px] text-[#FAFAFA] font-weight-400">
                         <span className="">Connect with us</span>
                         <div className="icons_social flex gap-7">
-                            <FontAwesomeIcon className='w-7 h-7' icon={faArrowRight} />
+                            <FontAwesomeIcon className='w-7 h-7' icon={faFacebookF} />
                             <FontAwesomeIcon className='w-7 h-7' icon={faArrowRight} />
                             <FontAwesomeIcon className='w-7 h-7' icon={faArrowRight} />
                             <FontAwesomeIcon className='w-7 h-7' icon={faArrowRight} />
