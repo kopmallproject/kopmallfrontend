@@ -7,6 +7,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { faPerson } from '@fortawesome/free-solid-svg-icons'
 import { faHamburger } from '@fortawesome/free-solid-svg-icons'
 
+
 const Header2 = () => {
   return (
     <>

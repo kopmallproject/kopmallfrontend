@@ -27,6 +27,10 @@ code {
   }
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 
 
 li.links:hover .sub_menu {
