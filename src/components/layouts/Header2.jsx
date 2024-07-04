@@ -6,6 +6,7 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { faPerson } from '@fortawesome/free-solid-svg-icons'
 import { faHamburger } from '@fortawesome/free-solid-svg-icons'
+import { Menu } from 'lucide-react'
 
 
 const Header2 = () => {
@@ -14,7 +15,7 @@ const Header2 = () => {
         <header className='w-full lg:h-28 h-14 lg:border-b-[1px] border-b-gray relative'>
             <div className="max-w-screen-2xl h-full mx-auto lg:px-28 px-[5%] py-5 flex items-center justify-between">
                 <div className='flex items-center gap-6 '>
-                    <FontAwesomeIcon icon={faHamburger}  className='lg:hidden'/>
+                    <Menu className='lg:hidden'/>
                     <h1 className='text-[20x] lg:text-3xl uppercase font-bold'>
                         KOP MALL
                     </h1>

@@ -44,9 +44,21 @@
     all: unset;
     display: block;
     cursor: pointer;
-    width: 1rem;
-    height: 1rem;
+    width: .5rem;
+    height: .5rem;
     transition: scale 100ms ease-in-out;
+}
+
+
+@media (min-width:768px) {
+    .img-slider-dot-btn {
+        all: unset;
+        display: block;
+        cursor: pointer;
+        width: 1rem;
+        height: 1rem;
+        transition: scale 100ms ease-in-out;
+    }
 }
 
 .img-slider-dot-btn:hover {

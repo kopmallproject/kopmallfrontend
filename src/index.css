@@ -25,6 +25,11 @@ code {
   .subMenu {
     @apply hidden absolute -bottom-24 -left-20 lg:-left-10 bg-white rounded-full px-7 py-5 shadow-md;
   }
+
+  .category_div_card {
+    @apply flex flex-row items-center gap-2 text-[16px];
+  }
+
 }
 
 *, *::before, *::after {
