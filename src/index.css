@@ -42,3 +42,15 @@ li.links:hover .sub_menu {
   display: block;
 }
 
+.grad_1 {
+  background: linear-gradient(315.51deg, rgba(252, 179, 73, 0.6) 29.82%, rgba(37, 19, 58, 0.6) 93.5%);
+}
+
+.grad_2 {
+  background-color: #25133A99;
+}
+
+.product_card:hover button {
+  bottom: 3px;
+}
+
