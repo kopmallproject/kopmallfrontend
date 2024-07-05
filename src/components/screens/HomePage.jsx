@@ -98,7 +98,57 @@ const HomePage = () => {
               <img className='w-[205px] lg:w-[568px] lg:h-[330px] h-[119px] z-20 relative' src="/assets\JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png" alt="" />
             </div>
           </div>
+        </div>
+
+
+        <div className="featured_section">
+          <div className=''>
+            <img src="" alt="" />
+            <span className="">Featured</span>
           </div>
+          <h3>New Arrival</h3>
+
+          <div className="">
+            <div className="">
+              <img src="" alt="" />
+              <div className="d">
+                <h4 className=''>PlayStation 5</h4>
+                <p className="">Black and White version of the PS5 coming out on sale.</p>
+                <button className="">Buy Now!</button>
+              </div>
+            </div>
+            <div className="">
+              <div className="">
+                <div className="">
+                  <h4 className="">Smart Watches</h4>
+                  <p className="">This is a placeholder for product description.</p>
+                  <button className="">Buy Now!</button>
+                </div>
+                <div className="">
+                  <img src="" alt="" className="" />
+                </div>
+              </div>
+              <div className="">
+                <div className="">
+                  <img src="" alt="" />
+                  <div className="d">
+                    <h4 className=''>Speakers</h4>
+                    <p className="">Amazon wireless speakers</p>
+                    <button className="">Buy Now!</button>
+                  </div>
+                </div>
+                <div className="">
+                  <img src="" alt="" />
+                  <div className="d">
+                    <h4 className=''>Mouse</h4>
+                    <p className="">Black and White version of the PS5 coming out on sale.</p>
+                    <button className="">Logitech Mouse</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <Footer />
     </>
