@@ -5,8 +5,11 @@ import Header from '../layouts/Header'
 import Header2 from '../layouts/Header2'
 import Footer from '../layouts/Footer'
 import ImageSlider from '../ImageSlider'
-import { Apple, Camera, Car, Gamepad2, Heart, House, Lamp, Laptop, Shell, Smartphone, Watch } from 'lucide-react'
+import { Apple, Camera, Car, Gamepad2, Heart, House, Lamp, Laptop, Phone, Shell, Smartphone, Truck, Watch } from 'lucide-react'
 import {IconProp} from '@fortawesome/fontawesome-svg-core'
+import ProductCard from '../ProductCard'
+import ProductCardii from '../ProductCardii'
+import { flash_sales, logos, products } from '../../data'
 
 const slideImg ="assets/Slider_1.png"
 
@@ -14,24 +17,7 @@ const slideImg ="assets/Slider_1.png"
 const IMAGES = [slideImg, slideImg, slideImg, slideImg, slideImg]
 
 
-const Star = ({ filled }) => {
-  return (
-    <FontAwesomeIcon className={filled ? 'text-[#ffc107] w-[10px] h-[10px]' : 'text-[#ccc] w-[10px] h-[10px]'} icon={faStar} />
-  )
-}
 
-
-const StarRating = (rating) => {
-  return (
-      <>
-          {[...Array(5)].map((_, index) => (
-              <span className='' key={index}>
-                  <Star className="" filled={rating > index} />
-              </span>
-          ))}
-      </>
-  )
-}
 
 
 const HomePage = () => {
@@ -86,6 +72,21 @@ const HomePage = () => {
           <div className='w-[90%] lg:w-[72%]' style={{ height: "100%", margin: "0 auto"}}>
             <ImageSlider imageUrls={IMAGES} />
           </div>
+        </div>
+
+        <div className="flash_sales_section lg:px-28 px-[5%] mt-20">
+            <div className='flex gap-3 items-center '>
+              <img className='w-14px h-27px lg:w-[20px] lg:h-[40px]' src="/assets/Rectangle.png" alt="" />
+              <span className="text-[#FDAF3E] text-[12px] lg:text-[24px]  font-bold">Today's</span>
+            </div>
+            <div><h3 className='text-[#000000] text-[18px] lg:text-[36px] font-semibold mt-6 lg:mt-8 '>Flash Sales</h3></div>
+
+            <div className="product_card_wrapper mt-6 lg:mt-8 pb-3 flex flex-row flex-nowrap gap-6 overflow-x-scroll scrolling-auto">
+              
+              {flash_sales.map(data => (
+                <ProductCardii key={data.id} data={data} />
+              ))}
+            </div>
         </div>
 
         <div className="lg:px-28 px-[2%]">
@@ -174,37 +175,100 @@ const HomePage = () => {
         </div>
 
         <div className="explore_products_section lg:px-28 px-[5%] mt-20">
-          <div className='flex gap-3 items-center '>
+            <div className='flex gap-3 items-center '>
               <img className='w-14px h-27px lg:w-[20px] lg:h-[40px]' src="/assets/Rectangle.png" alt="" />
               <span className="text-[#FDAF3E] text-[12px] lg:text-[24px]  font-bold">Featured</span>
             </div>
             <div><h3 className='text-[#000000] text-[18px] lg:text-[36px] font-semibold mt-6 lg:mt-8 '>New Arrival</h3></div>
 
-            <div className="product_card_wrapper mt-6 lg:mt-8 flex flex-row gap-6">
-              <div className="product_card w-[135px]">
-                <div className="bg-[#F5F5F5] overflow-y-hidden h-[125px]  w-[100%] relative flex flex-col justify-center items-center ">
-                  <div className="flex justify-between items-center px-[2%] top-2 absolute w-[100%]">
-                    <span className='bg-[#067B35] px-[2px] py-[1px] text-[5px] text-[#FAFAFA]'>New</span>
-                    <i className="p-[3px] bg-white rounded-full"><Heart className='w-[10px] h-[9px]' /></i>
-                  </div>
-                  <img className="w-[86px] h-[76px]" src="/assets/g92-2-500x500.png" alt="" />
-                  <button className="absolute -bottom-7  w-[100%] py-1 bg-[#FCB349] text-[#FFFFFF] text-[10px]">Add To Cart</button>
-                </div>
-                <div className="mt-2">
-                  <h4 className="text-[#000000] text-[8px]">CANON EOS DSLR Camera</h4>
-                  <div className="flex gap-2 items-center">
-                    <span className="text-[#DB4444] text-[8px]">$360</span>
-                    <div className="">{StarRating(4)}</div>
-                    <span className='text-[#000000] text-[7px] font-weight-semibold opacity-8'>(95)</span>
-                  </div>
-                </div>
-              </div>
+            <div className="product_card_wrapper pb-3 mt-6 lg:mt-8 flex flex-row gap-6 flex-nowrap overflow-x-scroll scroll-auto ">
+              
+              {products.map(product => (
+                <ProductCard key={product.id} product={product}/>
+              ))}
             </div>
-        
-        
-        
-        
         </div>
+
+
+        <div className="category_section lg:px-28 px-[5%] mt-20">
+          <div className='flex gap-3 items-center '>
+            <img className='w-14px h-27px lg:w-[20px] lg:h-[40px]' src="/assets/Rectangle.png" alt="" />
+            <span className="text-[#FDAF3E] text-[12px] lg:text-[24px]  font-bold">Categories</span>
+          </div>
+          <div><h3 className='text-[#000000] text-[18px] lg:text-[36px] font-semibold mt-6 lg:mt-8 '>Browse By Category</h3></div>
+
+          <div className="category_card_wrapper mt-6 lg:mt-8 flex flex-row gap-6">
+            <div className="catgory_card hover:bg-[#FDAF3E] w-[85px] h-[72px] lg:w-[170px] lg:h-[145px] gap-2 flex flex-col  items-center justify-center border-[1px] border-[#0000004D] rounded-[4px]">
+                <i ><Smartphone className='h-[28px] w-[28px] mx-auto lg:h-[56px] lg:w-[56px]' /></i>
+                <p className='text-[8px] mx-auto  lg:text-[16px] text-[#000]'>Phones</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="official_store_section lg:px-28 px-[5%] mt-20">
+          <div className="">
+            <h3 className='text-[24px] lg:text-[32px] font-bold text-center'>Official Store</h3>
+          </div>
+
+          <div className="store_card_wrapper mt-4 lg:mt-6 flex flex-wrap justify-between gap-y-3">
+            {logos.map(logo => (
+              <div key={logo.id} className="store_card w-[97px] h-[93px] lg:w-[170px] lg:h-[163px] flex flex-col justify-center items-center rounded-[5%] bg-[#4B3D88]">
+                <img className="w-[69px] h-[34px] lg:w-[120px] lg:h-[63px]" src={logo.icon} alt=""  />
+              </div>
+            ))
+          }
+          </div>
+        </div>
+
+
+        <div className="lg:px-44 px-[5%] mt-20 flex flex-row justify-between items-start">
+            <div className="card flex flex-col justify-center items-center">
+              <i className="p-2 lg:p-3 w-fit border-[#fee8c8] border-[6px] lg:border-[10px] text-[#fff] bg-[#25133A] rounded-full"><Truck className='w-[16px] h-[16px] lg:w-[40px] lg:h-[40px]' /></i>
+              <h4 className="mt-3 text-[8px] lg:text-[20px] font-bold">FREE AND FAST DELIVERY</h4>
+              <p className='mt-2 text-[5.6px] lg:text-[14px]'>Free delivery for all orders over $140</p>
+            </div>
+
+            <div className="card flex flex-col justify-center items-center">
+              <i className="p-2 lg:p-3 w-fit border-[#fee8c8] border-[6px] lg:border-[10px] text-[#fff] bg-[#25133A] rounded-full"><Truck className='w-[16px] h-[16px] lg:w-[40px] lg:h-[40px]' /></i>
+              <h4 className="mt-3 text-[8px] lg:text-[20px] font-bold">24/7 CUSTOMER SERVICE</h4>
+              <p className='mt-2 text-[5.6px] lg:text-[14px]'>Friendly 24/7 customer support</p>
+            </div>
+            
+            <div className="card flex flex-col justify-center items-center">
+              <i className="p-2 lg:p-3 w-fit border-[#fee8c8] border-[6px] lg:border-[10px] text-[#fff] bg-[#25133A] rounded-full"><Truck className='w-[16px] h-[16px] lg:w-[40px] lg:h-[40px]' /></i>
+              <h4 className="mt-3 text-[8px] lg:text-[20px] font-bold">MONEY BACK GUARANTEE</h4>
+              <p className='mt-2 text-[5.6px] lg:text-[14px]'>We reurn money within 30 days</p>
+            </div>
+
+        </div>
+
+
+        
+        <div className="lg:px-28 px-[5%] mt-20 flex flex-col lg:flex-row justify-between items-start">
+          <div className="relative bg-[#FCB349] flex flex-row justify-between px-2 lg:px-5 w-[100%] lg:w-[48%] lg:h-[194px]">
+            <div className="flex flex-col justify-end">
+              <img className='absolute top-0 left-0 w-[54px] h-[108px] lg:w-[75px] lg:h-[150px] z-10' src="/assets/Ellipse26.png" alt="" />
+              <img className='relative z-20 lg:bottom-0' src="/assets/image67.png" alt="" />
+            </div>
+            <div className=" flex flex-col justify-center items-center">
+              <h4 className='w-[169px] lg:w-[234px] font-bold text-[23px] lg:text-[32px] text-right leading-7 lg:leading-10'>Save More on Apple Products</h4>
+            </div>
+          </div>
+
+          <div className="relative mt-4 lg:mt-0 bg-[#FCB349] flex flex-row justify-between px-2 lg:px-5 w-[100%] lg:w-[48%] lg:h-[194px]">
+            <div className="flex flex-col justify-end">
+              <img className='absolute top-0 left-0 w-[54px] h-[108px] lg:w-[75px] lg:h-[150px] z-10' src="/assets/Ellipse26.png" alt="" />
+              <img className='relative z-20 lg:bottom-0' src="/assets/image68.png" alt="" />
+            </div>
+            <div className=" flex flex-col justify-center items-center">
+              <h4 className='w-[169px] lg:w-[234px] font-bold text-[23px] lg:text-[32px] text-right leading-7 lg:leading-10'>Enjoy 3 months warranty on All Products</h4>
+            </div>
+          </div>
+
+        </div>
+
+
   
         
         <Footer />
