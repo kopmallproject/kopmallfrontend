@@ -11,11 +11,11 @@ function App() {
   return (
     <>
       {/* <SignUp /> */}
-      {/* <Login /> */}
+      <Login />
       {/* <ForgetPassword /> */}
       {/* <Recovery /> */}
       {/* <OTP /> */}
-      <HomePage />
+      {/* <HomePage /> */}
     </>
   );
 }
