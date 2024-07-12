@@ -6,16 +6,20 @@ import ForgetPassword from './components/screens/authentication/ForgetPassword';
 import Recovery from './components/screens/authentication/Recovery';
 import OTP from './components/screens/authentication/OTP';
 import HomePage from './components/screens/HomePage';
+import ProductPage from './components/screens/productPage/ProductPage';
+import CartPage from './components/screens/productPage/CartPage';
 
 function App() {
   return (
     <>
       {/* <SignUp /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <ForgetPassword /> */}
       {/* <Recovery /> */}
       {/* <OTP /> */}
       {/* <HomePage /> */}
+      {/* <ProductPage /> */}
+      <CartPage />
     </>
   );
 }
