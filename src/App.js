@@ -8,6 +8,7 @@ import OTP from './components/screens/authentication/OTP';
 import HomePage from './components/screens/HomePage';
 import ProductPage from './components/screens/productPage/ProductPage';
 import CartPage from './components/screens/productPage/CartPage';
+import ProductPageOverview from './components/screens/productPage/ProductPageOverview';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <OTP /> */}
       {/* <HomePage /> */}
       {/* <ProductPage /> */}
-      <CartPage />
+      {/* <CartPage /> */}
+      <ProductPageOverview />
     </>
   );
 }
