@@ -122,7 +122,7 @@ const ProductPageOverview = () => {
 
                             <div className="mt-9">
                                 <h5 className="text-[#00000080] text-[16px]">Brand</h5>
-                                <p className="text-[#00000080] text-[16px] mt-4">Sony Ps4 Controller Dualshock 4 Wireless Game Pad - Red Camo The DualShock 4 Wireless Controller features familiar controls, and incorporates several innovative features to usher in a new era of interactive experiences. Its definitive analog sticks and trigger buttons have been improved for greater feel and sensitivity. A multi touch, clickable touch pad expands gameplay possibilities, while the incorporated light bar in conjunction with the PlayStation Camera allows for easy player identification and screen adjustment when playing with friends in the same room. The addition of the Share button makes utilizing the social capabilities of the PlayStation 4 as easy as the push of a button. The DualShock 4 Wireless Controller is more than a controller; it's your physical connection to a new era of gaming. Pair your controller you will need to pair your controller when you use it for the first time and when you use it with another PS4 system. Turn on the PS4 system and connect the controller with the USB cable to complete device pairing charging your controller With the PS4 system turned on or in rest mode, connect your controller using the USB cable.</p>
+                                <p className="text-[#00000080] text-[16px] mt-4">Sony Ps4 Controller Dualshock 4 Wireless Game Pad - Red CamoThe DualShock 4 Wireless Controller features familiar controls, and incorporates several innovative features to usher in a new era of interactive experiences. Its definitive analog sticks and trigger buttons have been improved for greater feel and sensitivity. A multi touch, clickable touch pad expands gameplay possibilities, while the incorporated light bar in conjunction with the PlayStation Camera allows for easy player identification and screen adjustment when playing with friends in the same room. The addition of the Share button makes utilizing the social capabilities of the PlayStation 4 as easy as the push of a button. The DualShock 4 Wireless Controller is more than a controller; it's your physical connection to a new era of gaming. Pair your controller you will need to pair your controller when you use it for the first time and when you use it with another PS4 system. Turn on the PS4 system and connect the controller with the USB cable to complete device pairing charging your controller With the PS4 system turned on or in rest mode, connect your controller using the USB cable.</p>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@ const ProductPageOverview = () => {
                     <input type="radio" name="my-accordion-4" />
                     <div className="collapse-title text-xl font-medium">Warranty</div>
                     <div className="collapse-content">
-                    <p>Reviews</p>
+                        <p>Warranty information not available for this item or the duration of the warranty should be specified.</p>
                     </div>
                 </div>
                 <div className="collapse collapse-arrow join-item border-base-300 border">
