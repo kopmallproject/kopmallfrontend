@@ -9,13 +9,8 @@ import HomePage from './components/screens/HomePage';
 import ProductPage from './components/screens/productPage/ProductPage';
 import CartPage from './components/screens/productPage/CartPage';
 import ProductPageOverview from './components/screens/productPage/ProductPageOverview';
-import MyAccordion from './components/CustomAccordion';
+import UserAccount from './components/screens/userPage/UserAccount';
 
-const items = [
-  { title: 'Item 1', content: 'Content of item 1' },
-  { title: 'Item 2', content: 'Content of item 2' },
-  { title: 'Item 3', content: 'Content of item 3' },
-];
 
 
 
@@ -31,7 +26,7 @@ function App() {
       {/* <ProductPage /> */}
       {/* <CartPage /> */}
       {/* <ProductPageOverview /> */}
-      <MyAccordion items={items} />
+      <UserAccount />
 
     </>
   );
