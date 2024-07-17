@@ -39,7 +39,32 @@ const UserAccount = () => {
                     <a className='text-[#FCB349] flex flex-row items-center gap-2' href=""><LogOut />Logout</a>
                </div>
             </div>
+
+            <div className="lg:px-28 px-[5%] py-5 ">
+                <h3 className="text-[20px] font-bold px-2">Account Overview</h3>
+                <div className="flex flex-col lg:flex-row">
+                    <div className="mt-8 border-[1px] border-solid border-[#0000001A] rounded-lg px-2 h-[201px]">
+                        <h4 className="py-2 text-[16px] font-normal border-b-[1px] border-[#0000001A]">Account Details</h4>
+                        <div className="">
+                            <span className="text-[14px] font-normal mt-4 ">Wave Adom</span>
+                            <p className="text-[14px] font-normal text-[#00000080] mt-4">iamwaveofficial@gmail.com</p>
+                        </div>
+                    </div>
+                    <div className="mt-8 border-[1px] border-solid border-[#0000001A] rounded-lg px-2 h-[201px]">
+                        <h4 className="py-2 text-[16px] font-normal border-b-[1px] border-[#0000001A]">Address Book</h4>
+                        <div className="">
+                            <span className="text-[14px] font-normal mt-4">Your default shipping address:</span>
+                            <p className="text-[14px] font-normal text-[#00000080] mt-4">Wave Adom Shop G8-18 Areena market, Oshodi, Lagos OSHODI-BOLADE, Lagos</p>
+                            <p className="text-[14px] font-normal text-[#00000080] mt-4">+234 8072101662 / +234 8033542913</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
         </div>
+
+        
+
 
         <Footer />
     </>
