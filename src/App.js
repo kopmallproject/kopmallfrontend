@@ -10,6 +10,8 @@ import ProductPage from './components/screens/productPage/ProductPage';
 import CartPage from './components/screens/productPage/CartPage';
 import ProductPageOverview from './components/screens/productPage/ProductPageOverview';
 import UserAccount from './components/screens/userPage/UserAccount';
+import UserOrder from './components/screens/userPage/UserOrder';
+import UserOrderdetails from './components/screens/userPage/UserOrderdetails';
 
 
 
@@ -26,7 +28,9 @@ function App() {
       {/* <ProductPage /> */}
       {/* <CartPage /> */}
       {/* <ProductPageOverview /> */}
-      <UserAccount />
+      {/* <UserAccount /> */}
+      {/* <UserOrder /> */}
+      <UserOrderdetails />
 
     </>
   );
