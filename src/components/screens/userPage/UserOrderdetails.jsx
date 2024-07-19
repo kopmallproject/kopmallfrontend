@@ -10,7 +10,7 @@ const UserOrderdetails = () => {
         <Header2 />
 
         <div className="py-20 lg:px-28 px-[5%]  bg-[#f9f9f9] flex flex-col lg:flex-row lg:justify-between">
-            <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[20%] bg-[#fff]  text-[#000000]">
+            <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[23%] lg:h-fit bg-[#fff]  text-[#000000]">
                 <div className="category_div_card rounded-t-lg bg-[#D7D7D7] px-5 py-3">
                     <UserRound />
                     <span>My Account</span>
@@ -41,9 +41,9 @@ const UserOrderdetails = () => {
             </div>
 
 
-            <div className="lg:drop-shadow-md rounded-lg bg-[#fff] w-[100%] lg:w-[880px]  mt-10 lg:mt-0">
+            <div className="lg:drop-shadow-md rounded-lg bg-[#fff] w-[100%] lg:w-[880px]  mt-10 lg:mt-0 pb-10">
                 <div className="px-5 py-5 border-b-[1px] border-[#0000001A] ">
-                    <h3 className="text-[20px] font-bold  ">Order Details</h3>
+                    <h3 className="text-[20px] lg:text-[24px] font-bold ">Order Details</h3>
                 </div>
                 <div className="px-5">
                     <div className="mt-5 shadow-sm">
@@ -55,41 +55,78 @@ const UserOrderdetails = () => {
                         </div>
                     </div>
 
-                    
-
-                    <div className="card_wrapper flex flex-col gap-4 lg:gap-6 mt-4 lg:mt-0  lg:py-4">
-                        <div className="card rounded-none p-3 lg:p-5 flex flex-row justify-between items-start border-[0.5px] border-solid border-[#0000001A]">
-                            <div className="flex flex-row gap-3 lg:gap-5 items-center">
-                                <img src="/assets/ProductOverviewImageIV.png" alt="" className="w-[75px] h-[71px] lg:w-[150px] lg:h-[150px]" />
-                            
-                                <div className="flex flex-col gap-3">
-                                    <h4 className='text-[12px] lg:text-[24px]'>Havic HV G-92 Gamepad</h4>
-                                    <span className='text-[12px] lg:text-[24px] text-[#00000080]'>Order 217892</span>
+                    <div className="py-6">
+                        <h4 className="text-[20px] font-bold">ITEMS IN YOUR ORDER</h4>
+                        <div className="mt-3">
+                            <div className="card shadow-md p-3 lg:p-5 ">
+                                <div className="flex flex-col gap-2">
                                     <span className='text-[9px] lg:text-[18px] w-fit p-2 rounded text-[#fff] bg-[#0F4202]'>Delivered</span>
-                                    <span className='text-[12px] text-[20px] font-bold'>On 21-06-2024</span>
+                                    <span className='text-[8px] lg:text-[20px] font-bold'>On 21-06-2024</span>
                                 </div>
-                            </div>
-                            <div className="">
-                                <a href="" className="text-[#FCB349] text-[10px] lg:text-[20px]">SEE DETAILS</a>
-                            </div>
-                        </div>
-
-                        <div className="card rounded-none p-3 lg:p-5 flex flex-row justify-between items-start border-[0.5px] border-solid border-[#0000001A]">
-                            <div className="flex flex-row gap-3 lg:gap-5 items-center">
-                                <img src="/assets/ProductOverviewImageIV.png" alt="" className="w-[75px] h-[71px] lg:w-[150px] lg:h-[150px]" />
-                            
-                                <div className="flex flex-col gap-3">
-                                    <h4 className='text-[12px] lg:text-[24px]'>Havic HV G-92 Gamepad</h4>
-                                    <span className='text-[12px] lg:text-[24px] text-[#00000080]'>Order 217892</span>
-                                    <span className='text-[9px] lg:text-[18px] w-fit p-2 rounded text-[#fff] bg-[#0F4202]'>Delivered</span>
-                                    <span className='text-[12px] text-[20px] font-bold'>On 21-06-2024</span>
+                                <div className="mt-3 flex flex-row gap-3 lg:gap-5 items-center">
+                                    <img src="/assets/ProductOverviewImageIV.png" alt="" className="w-[75px] h-[71px] lg:w-[150px] lg:h-[150px]" />
+                                
+                                    <div className="flex flex-col gap-1">
+                                        <h4 className='text-[12px] lg:text-[24px]'>Havic HV G-92 Gamepad</h4>
+                                        <span className='text-[12px] lg:text-[20px] text-[#00000080]'>QUANTITY: 1</span>
+                                        <span className='text-[8px] font-bold'>$162</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="">
-                                <a href="" className="text-[#FCB349] text-[10px] lg:text-[20px]">SEE DETAILS</a>
                             </div>
                         </div>
                     </div>
+
+
+                    <div className="flex flex-col lg:flex-row  gap-5 lg:gap-0 lg:justify-between">
+                        <div className="lg:w-[400px] border-[1px] border-solid border-[#0000001A] rounded-md pb-3">
+                            <h4 className="py-3 px-3  border-b-[1px] border-solid border-[#0000001A] text-[20px] font-bold">PAYMENT INFORMATION</h4>
+                            <div className="flex flex-col gap-4">
+
+                                <div className="px-3">
+                                    <h6 className="text-[20px] ">Payment Method</h6>
+                                    <div className="mt-2 flex flex-col gap-2 text-[16px] background: text-[#00000080]">
+                                        <span className="">Pi Wallet</span>
+                                    </div>
+                                </div>
+
+                                <div className="px-3">
+                                    <h6 className="text-[20px] ">Payment Details</h6>
+                                    <div className="mt-2 flex flex-col gap-2 text-[16px] background: text-[#00000080]">
+                                        <span className="">Items total: $162</span>
+                                        <span className="">Delivery fees: $5</span>
+                                        <span className="">Total: $167</span>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+
+                        <div className="lg:w-[400px] border-[1px] border-solid border-[#0000001A] rounded-md pb-3">
+                            <h4 className="py-3 px-3  border-b-[1px] border-solid border-[#0000001A] text-[20px] font-bold">DELIVERY INFORMATION</h4>
+                            <div className="flex flex-col gap-4">
+
+                                <div className="px-3">
+                                    <h6 className="text-[20px] ">Delivery Method</h6>
+                                    <div className="mt-2 flex flex-col gap-2 text-[16px] background: text-[#00000080]">
+                                        <span className="">Door Delivery</span>
+                                    </div>
+                                </div>
+
+                                <div className="px-3">
+                                    <h6 className="text-[20px] ">Shipping Address</h6>
+                                    <div className="mt-2 flex flex-col gap-2 text-[16px] background: text-[#00000080]">
+                                        <span className="">Wave Adom</span>
+                                        <span className="">This is a placeholder for the delivery address</span>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    
                 </div>
             </div>
 

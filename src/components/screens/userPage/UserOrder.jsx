@@ -10,7 +10,7 @@ const UserOrder = () => {
         <Header2 />
 
         <div className="py-20 lg:px-28 px-[5%]  bg-[#f9f9f9] flex flex-col lg:flex-row lg:justify-between">
-            <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[20%] bg-[#fff]  text-[#000000]">
+            <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[23%] lg:h-[23%] bg-[#fff]  text-[#000000]">
                 <div className="category_div_card rounded-t-lg bg-[#D7D7D7] px-5 py-3">
                     <UserRound />
                     <span>My Account</span>
@@ -59,7 +59,7 @@ const UserOrder = () => {
                                     <h4 className='text-[12px] lg:text-[24px]'>Havic HV G-92 Gamepad</h4>
                                     <span className='text-[12px] lg:text-[24px] text-[#00000080]'>Order 217892</span>
                                     <span className='text-[9px] lg:text-[18px] w-fit p-2 rounded text-[#fff] bg-[#0F4202]'>Delivered</span>
-                                    <span className='text-[12px] text-[20px] font-bold'>On 21-06-2024</span>
+                                    <span className='text-[12px] lg:text-[20px] font-bold'>On 21-06-2024</span>
                                 </div>
                             </div>
                             <div className="">
@@ -75,7 +75,7 @@ const UserOrder = () => {
                                     <h4 className='text-[12px] lg:text-[24px]'>Havic HV G-92 Gamepad</h4>
                                     <span className='text-[12px] lg:text-[24px] text-[#00000080]'>Order 217892</span>
                                     <span className='text-[9px] lg:text-[18px] w-fit p-2 rounded text-[#fff] bg-[#0F4202]'>Delivered</span>
-                                    <span className='text-[12px] text-[20px] font-bold'>On 21-06-2024</span>
+                                    <span className='text-[12px] lg:text-[20px] font-bold'>On 21-06-2024</span>
                                 </div>
                             </div>
                             <div className="">
