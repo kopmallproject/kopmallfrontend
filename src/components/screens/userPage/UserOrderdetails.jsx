@@ -10,7 +10,7 @@ const UserOrderdetails = () => {
         <Header2 />
 
         <div className="py-20 lg:px-28 px-[5%]  bg-[#f9f9f9] flex flex-col lg:flex-row lg:justify-between">
-            <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[23%] lg:h-fit bg-[#fff]  text-[#000000]">
+            <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[20%] lg:h-fit bg-[#fff]  text-[#000000]">
                 <div className="category_div_card rounded-t-lg bg-[#D7D7D7] px-5 py-3">
                     <UserRound />
                     <span>My Account</span>
@@ -77,7 +77,7 @@ const UserOrderdetails = () => {
                     </div>
 
 
-                    <div className="flex flex-col lg:flex-row  gap-5 lg:gap-0 lg:justify-between">
+                    <div className="flex flex-col lg:flex-row  gap-5 lg:gap-5 lg:justify-between">
                         <div className="lg:w-[400px] border-[1px] border-solid border-[#0000001A] rounded-md pb-3">
                             <h4 className="py-3 px-3  border-b-[1px] border-solid border-[#0000001A] text-[20px] font-bold">PAYMENT INFORMATION</h4>
                             <div className="flex flex-col gap-4">

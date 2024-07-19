@@ -12,6 +12,8 @@ import ProductPageOverview from './components/screens/productPage/ProductPageOve
 import UserAccount from './components/screens/userPage/UserAccount';
 import UserOrder from './components/screens/userPage/UserOrder';
 import UserOrderdetails from './components/screens/userPage/UserOrderdetails';
+import UserSavedItems from './components/screens/userPage/UserSavedItems';
+import UserAddressBook from './components/screens/userPage/UserAddressBook';
 
 
 
@@ -30,7 +32,9 @@ function App() {
       {/* <ProductPageOverview /> */}
       {/* <UserAccount /> */}
       {/* <UserOrder /> */}
-      <UserOrderdetails />
+      {/* <UserOrderdetails /> */}
+      {/* <UserSavedItems /> */}
+      <UserAddressBook />
 
     </>
   );
