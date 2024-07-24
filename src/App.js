@@ -14,27 +14,71 @@ import UserOrder from './components/screens/userPage/UserOrder';
 import UserOrderdetails from './components/screens/userPage/UserOrderdetails';
 import UserSavedItems from './components/screens/userPage/UserSavedItems';
 import UserAddressBook from './components/screens/userPage/UserAddressBook';
-
+import {HashRouter as Router, Routes, Route, HashRouter} from 'react-router-dom'
 
 
 
 function App() {
   return (
     <>
-      {/* <SignUp /> */}
-      {/* <Login /> */}
-      {/* <ForgetPassword /> */}
-      {/* <Recovery /> */}
-      {/* <OTP /> */}
-      {/* <HomePage /> */}
-      {/* <ProductPage /> */}
-      {/* <CartPage /> */}
-      {/* <ProductPageOverview /> */}
-      {/* <UserAccount /> */}
-      {/* <UserOrder /> */}
-      {/* <UserOrderdetails /> */}
-      {/* <UserSavedItems /> */}
-      <UserAddressBook />
+      <HashRouter>
+        <Routes>
+          <Route exact path='/' element={<HomePage />}></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/signup' element={<SignUp /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/login' element={<Login/> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/forgetpassword' element={<ForgetPassword /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/recovery' element={<Recovery /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/otp' element={<OTP /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/products' element={<ProductPage /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/cart' element={<CartPage /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/product/overview' element={<ProductPageOverview /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/user/account' element={<UserAccount /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/user/order' element={<UserOrder /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/user/order/details' element={<UserOrderdetails /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/user/saveditems' element={<UserSavedItems /> }></Route>
+        </Routes>
+
+        <Routes>
+          <Route exact path='/user/addressbook' element={<UserAddressBook /> }></Route>
+        </Routes>
+      </HashRouter>
+      
 
     </>
   );
