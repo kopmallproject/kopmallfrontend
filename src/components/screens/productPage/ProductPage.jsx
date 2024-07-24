@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Header2 from '../../layouts/Header2'
 import Footer from '../../layouts/Footer'
 import { Apple, Camera, Car, Gamepad2, House, Lamp, Laptop, Shell, Smartphone, Watch } from 'lucide-react'
@@ -6,7 +6,21 @@ import { products } from '../../../data'
 import ProductCardii from '../../ProductCardii'
 import ProductCardiii from '../../ProductCardiii'
 
+import {Link, useParams } from 'react-router-dom'
+import axios from 'axios'
+import { listProducts } from '../../../actions/productsActions'
+import { useDispatch, useSelector } from 'react-redux'
+import Loader from '../../Loader'
+import Message from '../../Message'
+
 const ProductPage = () => {
+    const dispatch = useDispatch()
+    const productsList = useSelector((state) => state.productsList);
+    const {error, loading, products} = productsList
+
+    useEffect(() => {
+        dispatch(listProducts())
+    }, [dispatch])
 
   return (
     <>
@@ -56,11 +70,20 @@ const ProductPage = () => {
                 </div>
             </div>
 
-            <div className="card_wrapper w-[100%] lg:w-[80%] flex flex-row flex-wrap gap-3">
-                {products.map(product => (
-                    <ProductCardiii data={product} />
-                ))}
-            </div>
+            
+            {
+                loading ? (<Loader />) : error ? (
+                    <Message variant='danger'>{error}</Message>
+                ) : (
+                    <div className="card_wrapper w-[100%] lg:w-[80%] flex flex-row flex-wrap gap-3">
+                        {products.map(product => (
+                            <ProductCardiii key={product.id} data={product} />
+                        ))}
+                    </div>
+                )
+            }
+                
+            
        </div>
 
         <Footer />

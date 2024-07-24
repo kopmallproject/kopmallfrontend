@@ -33,19 +33,19 @@ const ProductCardiii = ({data}) => {
                 <span className='bg-[#FCB349] px-[2px] py-[1px] text-[5px] lg:text-[12px] text-[#FAFAFA]'>-{data.discount}%</span>
                 <i className="p-[3px] bg-white rounded-full"><Heart className='w-[10px] h-[9px] lg:w-[20px] lg:h-[18px]' /></i>
                 </div>
-                <img className="w-[56px] h-[76px] lg:w-[142px] lg:h-[152px]" src={data.img} alt="" />
+                <img className="w-[56px] h-[76px] lg:w-[142px] lg:h-[152px]" src={data.image} alt="" />
                 <button className="absolute -bottom-10  w-[100%] py-1 bg-[#FCB349] text-[#FFFFFF] text-[10px] lg:text-[20px]">Add To Cart</button>
             </div>
             <div className="mt-2 lg:mt-5">
-                <h4 className="text-[#080606] text-[8px] lg:text-[16px]">{data.name}</h4>
+                <h4 className="text-[#080606] text-[8px] lg:text-[16px]">{data.title}</h4>
                 <div className="flex flex-col gap-2 items-start lg:mt-4">
                     <div className='flex gap-2'>
                         <span className="text-[#DB4444] text-[8px] lg:text-[16px]">$360</span>
                         <span className="text-[#000000] opacity-50 text text-[8px] lg:text-[16px]">${data.price}</span>
                     </div>
                     <div className="flex gap-2">
-                        <div className="">{StarRating(data.rating)}</div>
-                        <span className='text-[#000000] text-[7px] lg:text-[14px] font-weight-semibold opacity-8'>({data.reviews})</span>
+                        <div className="">{StarRating(data.rating.rate)}</div>
+                        <span className='text-[#000000] text-[7px] lg:text-[14px] font-weight-semibold opacity-8'>({data.rating.count})</span>
                     </div>
                 </div>
             </div>

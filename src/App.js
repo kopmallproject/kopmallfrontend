@@ -23,7 +23,7 @@ function App() {
     <>
       <HashRouter>
         <Routes>
-          <Route exact path='/' element={<HomePage />}></Route>
+          <Route exact path='/' element={<ProductPage />}></Route>
         </Routes>
 
         <Routes>
@@ -77,6 +77,7 @@ function App() {
         <Routes>
           <Route exact path='/user/addressbook' element={<UserAddressBook /> }></Route>
         </Routes>
+
       </HashRouter>
       
 
