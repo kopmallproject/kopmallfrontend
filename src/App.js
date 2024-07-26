@@ -23,15 +23,15 @@ function App() {
     <>
       <HashRouter>
         <Routes>
-          <Route exact path='/' element={<ProductPage />}></Route>
+          <Route exact path='/' element={<ProductPage />} />
         </Routes>
 
         <Routes>
-          <Route exact path='/signup' element={<SignUp /> }></Route>
+          <Route exact path='/signup' element={<SignUp /> } />
         </Routes>
 
         <Routes>
-          <Route exact path='/login' element={<Login/> }></Route>
+          <Route exact path='/login' element={<Login/> } />
         </Routes>
 
         <Routes>
@@ -47,7 +47,7 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route exact path='/products' element={<ProductPage /> }></Route>
+          <Route exact path='/product' element={<ProductPage /> }></Route>
         </Routes>
 
         <Routes>
@@ -55,7 +55,7 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route exact path='/product/overview' element={<ProductPageOverview /> }></Route>
+          <Route exact path='/product/:id' element={<ProductPageOverview /> }></Route>
         </Routes>
 
         <Routes>

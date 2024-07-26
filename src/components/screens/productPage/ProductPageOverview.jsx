@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header2 from '../../layouts/Header2'
 import Footer from '../../layouts/Footer'
 import ProductCardii from '../../ProductCardii'
@@ -6,6 +6,9 @@ import { flash_sales } from '../../../data'
 import { Heart, Recycle, Truck } from 'lucide-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { Link, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProductDetails } from '../../../actions/productsActions'
 
 const Star = ({ filled }) => {
     return (
@@ -26,7 +29,16 @@ const StarRating = (rating) => {
     )
 }
 
-const ProductPageOverview = () => {
+const ProductPageOverview = ({params}) => {
+    const {id} = useParams()
+    const dispatch = useDispatch()
+    const productDetails = useSelector((state) => state.productDetails)
+    const {error, loading, product} = productDetails
+
+    useEffect(() => {
+        dispatch(listProductDetails(id))
+        console.log(product)
+    }, [dispatch, params])
   return (
     <>
         <Header2 />
@@ -50,19 +62,19 @@ const ProductPageOverview = () => {
                         </div>
                     </div>
                     <div className="large_image_card flex flex-col justify-center items-center bg-[#F5F5F5] w-[250px] h-[300px] lg:w-[350px] lg:h-[450px] xl:w-[500px] xl:h-[600px]">
-                        <img className='w-[223px] h-[157px]  lg:w-[296px] lg:h-[165px] xl:w-[446px] xl:h-[315px]' src="/assets/ProductOverviewBigImage.png" alt="" />
+                        <img className='w-[223px] h-[157px]  lg:w-[296px] lg:h-[165px] xl:w-[446px] xl:h-[315px]' src={product.image} alt="" />
                     </div>
                 </div>
                 <div className="div mt-4 lg:mt-0 lg:w-[400px] xl:w-[400px]">
-                    <h3 className='text-[24px] font-semibold'>Havic HV G-92 Gamepad</h3>
+                    <h3 className='text-[24px] font-semibold'>{product.title}</h3>
                     <div className="flex gap-4 items-center  mt-4">
-                        <div className="">{StarRating(5)}</div>
-                        <span className='text-[#000000] text-[14px] lg:text-[14px] font-weight-semibold opacity-8'>(56) Reviews</span>
+                        <div className="">{StarRating(product.rating.rate)}</div>
+                        <span className='text-[#000000] text-[14px] lg:text-[14px] font-weight-semibold opacity-8'>({product.rating.count}) Reviews</span>
                         <span className='text-[#000000] text-[14px] lg:text-[14px] font-weight-semibold opacity-8'>|</span>
                         <span className='text-[14px] text-[#000000] font-weight-semibold opacity-8'>In stock</span>
                     </div>
-                    <div className="div  text-left mt-4"><span className='text-[20px] font-medium'>$192.00</span></div>
-                    <p className="mt-4 text-[14px] font-normal">PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</p>
+                    <div className="div  text-left mt-4"><span className='text-[20px] font-medium'>${product.price}</span></div>
+                    <p className="mt-4 text-[14px] font-normal">{product.description}</p>
                     <div className="mt-4 flex flex-row justify-between items-center">
                         <div className='flex items-start flex-row'>
                             <button className="border-[1px] border-solid border-[#00000080] flex flex-col justify-center items-center w-[30px] h-[44px] text-[20px] font-semibold">-</button>

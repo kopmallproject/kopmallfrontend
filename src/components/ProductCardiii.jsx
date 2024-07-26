@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faStar } from '@fortawesome/free-solid-svg-icons'
 import { Heart } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Star = ({ filled }) => {
     return (
@@ -37,7 +38,9 @@ const ProductCardiii = ({data}) => {
                 <button className="absolute -bottom-10  w-[100%] py-1 bg-[#FCB349] text-[#FFFFFF] text-[10px] lg:text-[20px]">Add To Cart</button>
             </div>
             <div className="mt-2 lg:mt-5">
-                <h4 className="text-[#080606] text-[8px] lg:text-[16px]">{data.title}</h4>
+                <Link className='decoration-none' to={`/product/${data.id}`}>
+                    <h4 className="text-[#080606] text-[8px] lg:text-[16px]">{data.title}</h4>
+                </Link>
                 <div className="flex flex-col gap-2 items-start lg:mt-4">
                     <div className='flex gap-2'>
                         <span className="text-[#DB4444] text-[8px] lg:text-[16px]">$360</span>

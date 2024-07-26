@@ -1,9 +1,41 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import './authentication.css'
+import {Link, useNavigate, useLocation} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import Loader from '../../Loader'
+import Message from '../../Message'
+import {validEmail, validPassword} from './Regex'
+
 
 const SignUp = () => {
+    const [fname, setFname] = useState("")
+    const [lname, setLname] = useState("")
+    const [email, setEmail] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
+    const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
+    const [show, changeShow] = useState("fa fa-eye-slash")
+    const navigate = useNavigate()
+
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        console.log(fname, lname, email,  phoneNumber, password)
+    }
+
+    const showPassword = () => {
+        var x = document.getElementById("pass1");
+        if (x.type == "password") {
+
+            x.type = "text"
+            changeShow(`fa fa-eye`);
+        } else {
+            x.type = "password"
+            changeShow(`fa fa-eye-slash`);
+        }
+    }
   return (
     <>
         <div className="flex flex-row ">
@@ -16,21 +48,21 @@ const SignUp = () => {
                     </div>
                     <div className="flex flex-col gap-3 lg:flex-row lg:gap-5">
                         <button className="btn rounded-[10px] bg-transparent text-white w-[100%] lg:w-[47%] font-weight-400
-                         text-[16px] lg:text-[12px] border-[1px] border-[#ffff] hover:text-[#25133A] hover:bg-[#ffff]">
+                         text-[16px] lg:text-[12px] border-[1px] border-[#fff] hover:text-[#25133A] hover:bg-[#ffff]">
                             <img src="assets/devicon_google.png" className='lg:w-[15px]' alt="" />
                             Sign up with Google
                         </button>
                         <button className="btn rounded-[10px] bg-transparent text-white w-[100%] lg:w-[47%] font-weight-400
-                         text-[16px] lg:text-[12px] border-[1px] border-[#ffff] hover:text-[#25133A] hover:bg-[#ffff]">
+                         text-[16px] lg:text-[12px] border-[1px] border-[#fff] hover:text-[#25133A] hover:bg-[#ffff]">
                             <img src="assets/devicon_apple.png" className='lg:w-[15px]' alt="" />
                             Sign up with Apple
                         </button>
                     </div>
                     <div className="divider text-[14px] text-[#FFFFFF80] font-weight-400 my-10">OR</div>
-                    <form action="" className='flex flex-col gap-3'>
-                        <input type="text" placeholder="First name" className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400" />
-                        <input type="text" placeholder="Last name" className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400" />
-                        <input type="email" placeholder="Email address" className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 " />
+                    <form action="" onSubmit={submitHandler} className='flex flex-col gap-3'>
+                        <input type="text" placeholder="First name" value={fname} onChange={(e) => setFname(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400" />
+                        <input type="text" placeholder="Last name" value={lname} onChange={(e) => setLname(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400" />
+                        <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 " />
                         <PhoneInput country={'us'} inputProps={{required:true}}  className="" />
                         {/* <PhoneInput country={'us'} inputProps={{required:true}}  className="border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 " /> */}
                         <label className="input input-bordered flex items-center gap-2 border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 ">

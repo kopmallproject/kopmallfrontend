@@ -9,6 +9,7 @@ import { faHamburger } from '@fortawesome/free-solid-svg-icons'
 import { Menu } from 'lucide-react'
 
 
+
 const Header2 = () => {
   return (
     <>
@@ -69,7 +70,7 @@ const Header2 = () => {
                                 absolute left-0 -bottom-2 text-xs flex items-center justify-center'>5</span>
                         </li>
                         <li className='links relative'>
-                            <a href="" className="flex gap-1 items-center text-[#000000]">
+                            <a href="#" className="flex gap-1 items-center text-[#000000]">
                                 <FontAwesomeIcon icon={faPerson} />
                                 <span className='hidden lg:inline-block'>account</span>
                                 <FontAwesomeIcon icon={faArrowDown}  className="hidden lg:inline-block"/>
@@ -77,7 +78,7 @@ const Header2 = () => {
                             <div className="sub_menu subMenu">
                                 <div className="card">
                                     <a href="" className="">
-                                        <span className='text-md text-[#FCB349]'>Lorem</span>
+                                        <span className='text-md text-[#FCB349]'>Login</span>
                                     </a>
                                 </div>
                                 <div className="card">
