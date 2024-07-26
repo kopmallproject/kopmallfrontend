@@ -1,6 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {Link, useNavigate, useLocation} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import Loader from '../../Loader'
+import Message from '../../Message'
 
 const ForgetPassword = () => {
+    const [email, setEmail] = useState("")
+    const [error, setError] = useState("")
+    const [show, changeShow] = useState("fa fa-eye-slash")
+    const navigate = useNavigate()
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        // console.log(setOtp)
+        
+    }
   return (
     <>
         <div className="flex flex-row ">
@@ -11,9 +25,9 @@ const ForgetPassword = () => {
                         <h3 className='text-[20px] font-weight-700 mb-[10px] text-[#FFFFFF]'>Forgot Password</h3>
                         <p className='text-[12px] font-weight-400 text-[#FFFFFF] lg:text-[16px] '>Enter your registered email address</p>
                     </div>
-                
-                   <form action="" className='flex flex-col gap-3'>
-                        <input type="email" placeholder="Email address" className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 " />
+                    {error && <Message variant='danger'>{Error}</Message>}
+                   <form action="" onSubmit={submitHandler} className='flex flex-col gap-3'>
+                        <input type="email" placeholder="Email address" value={email} onChange={setEmail} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 " />
                         
                         <button className="btn btn-block bg-transparent border-[1px] border-[#FCB349] text-[#FCB349] text-[20px] font-weight-700 hover:text-[#FCB349] hover:border-[#25133A] hover:bg-[#ffff]">Reset password</button>
                     </form>
