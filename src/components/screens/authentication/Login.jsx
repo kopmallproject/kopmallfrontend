@@ -6,18 +6,35 @@ import {Link, useNavigate, useLocation} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import Loader from '../../Loader'
 import Message from '../../Message'
+import { login } from '../../../actions/userAction';
 
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [error, setError] = useState("")
+    const [message, setMessage] = useState("")
     const [show, changeShow] = useState("fa fa-eye-slash")
     const navigate = useNavigate()
 
+    const dispatch = useDispatch()
+    const location = useLocation()
+    const redirect = location.search?location.search.split("=")[1] : "/"
+  
+    const userLogin = useSelector((state) => state.userLogin);
+    const {error, loading, userInfo} = userLogin
+  
+    useEffect(() => {
+      if(userInfo) {
+        navigate('/')
+      }
+    }, [userInfo, redirect])
+  
     const submitHandler = (e) => {
-        e.preventDefault()
-        // console.log(fname, lname, email,  phoneNumber, password)
-        
+      e.preventDefault()
+      // console.log(fname, lname, email, password, confirmPassword)
+  
+      dispatch(login(email, password ))
+      
+  
     }
 
     const showPassword = () => {
@@ -54,7 +71,7 @@ const Login = () => {
                         </button>
                     </div>
                     <div className="divider text-[14px] text-[#FFFFFF80] font-weight-400 my-10">OR</div>
-                    {error && <Message variant='danger'>{error}</Message>}
+                    {message && <Message variant='danger'>{message}</Message>}
                     <form action="" onSubmit={submitHandler} className='flex flex-col gap-3'>
                         <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 " />
                         <label className="input input-bordered flex items-center gap-2 border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 ">

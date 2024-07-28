@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import Loader from '../../Loader'
 import Message from '../../Message'
 import {validEmail, validPassword} from './Regex'
+import { signup } from '../../../actions/userAction'
 
 
 const SignUp = () => {
@@ -15,16 +16,44 @@ const SignUp = () => {
     const [email, setEmail] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     const [password, setPassword] = useState("")
-    const [error, setError] = useState("")
+    const [message, setMessage] = useState("")
     const [show, changeShow] = useState("fa fa-eye-slash")
     const navigate = useNavigate()
+
+    const dispatch = useDispatch()
+    const location = useLocation()
+    const redirect = location.search?location.search.split("=")[1] : "/"
+
+    const userSignup = useSelector((state) => state.userSignup);
+    const {error, loading, userInfo} = userSignup
+
+    useEffect(() => {
+        if(userInfo) {
+          navigate("/")
+        }
+    }, [userInfo, redirect])
 
 
     const submitHandler = (e) => {
         e.preventDefault()
         // console.log(fname, lname, email,  phoneNumber, password)
+        // if (password != confirmPassword) {
+        //     setMessage("Password DO not Match!")
+        //     navigate("/signup")
+        // }
+        // else if (!validEmail.test(email)) {
+        //     setMessage("Invalid Email Address!")
+        // }
+        // else 
         if (!validPassword.test(password)) {
-            setError("Password Criteria does not match!")
+            setMessage("Password Criteria dord not match!")
+        }
+        else {
+            // setMessage('Signup Success')
+            dispatch(signup(fname, lname, email, phoneNumber, password))
+            setMessage("signup is Success")
+            navigate("/signup")
+    
         }
     }
 
@@ -62,7 +91,7 @@ const SignUp = () => {
                         </button>
                     </div>
                     <div className="divider text-[14px] text-[#FFFFFF80] font-weight-400 my-10">OR</div>
-                    {error && <Message variant='danger'>{error}</Message>}
+                    {message && <Message variant='danger'>{message}</Message>}
                     <form action="" onSubmit={submitHandler} className='flex flex-col gap-3'>
                         <input type="text" placeholder="First name" value={fname} onChange={(e) => setFname(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400" />
                         <input type="text" placeholder="Last name" value={lname} onChange={(e) => setLname(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400" />
