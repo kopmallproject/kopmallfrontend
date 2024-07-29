@@ -46,6 +46,7 @@ const SignUp = () => {
         // }
         // else 
         if (!validPassword.test(password)) {
+            console.log(typeof(phoneNumber))
             setMessage("Password Criteria dord not match!")
         }
         else {

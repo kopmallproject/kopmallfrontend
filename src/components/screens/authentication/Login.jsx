@@ -33,8 +33,7 @@ const Login = () => {
       // console.log(fname, lname, email, password, confirmPassword)
   
       dispatch(login(email, password ))
-      
-  
+
     }
 
     const showPassword = () => {

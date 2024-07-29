@@ -2,6 +2,8 @@ import axios from "axios";
 import { USER_LOGIN_REQUEST,  USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
     USER_LOGOUT, USER_SIGNUP_REQUEST, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL
 } from "../constants/UserConstants";
+import { baseUrl } from "../components/baseUrl";
+
 
 
 export const signup = (fname, lname, email, phoneNumber, password) => async(dispatch) => {
@@ -13,21 +15,23 @@ export const signup = (fname, lname, email, phoneNumber, password) => async(disp
 
         const config={
             headers: {
-                'Content-type': 'application/json'
+                'Content-Type': 'application/json'
             }
 
         }
 
-        const {data} = await axios.post('https://kopmall-nxwdv.ondigitalocean.app/api/users/register',
-            {
-                first_name: fname,
-                last_name: lname,
-                email: email,
-                mobile: phoneNumber,
-                password: password
+        const payload = {
+            first_name: fname,
+            last_name: lname,
+            email: email,
+            mobile: phoneNumber,
+            password: password
+        };
 
-            }, config
-        )
+        console.log('Sending payload:', payload);
+
+        const {data} = await axios.post(`${baseUrl}/users/register`, payload, config)
+
         dispatch({
             type:USER_SIGNUP_SUCCESS,
             payload:data
@@ -37,6 +41,9 @@ export const signup = (fname, lname, email, phoneNumber, password) => async(disp
     }
 
     catch(error) {
+
+        console.error('Signup error:', error.response ? error.response.data : error.message);
+
         dispatch({
             type:USER_SIGNUP_FAIL,
             payload: error.response && error.response.data.detail 
@@ -62,13 +69,14 @@ export const login = (email, password) => async(dispatch) => {
             }
         }
 
-        const {data} = await axios.post('https://kopmall-nxwdv.ondigitalocean.app/api/users/login',
-            {
-                username: email,
-                password: password
+        const payload = {
+            username: email,
+            password: password
+        };
 
-            }, config
-        )
+        console.log('Sending payload:', payload);
+
+        const {data} = await axios.post(`${baseUrl}/api/users/login`, payload, config)
         dispatch({
             type:USER_LOGIN_SUCCESS,
             payload:data
@@ -78,6 +86,9 @@ export const login = (email, password) => async(dispatch) => {
     }
 
     catch(error) {
+
+        console.error('Signup error:', error.response ? error.response.data : error.message);
+
         dispatch({
             type:USER_LOGIN_FAIL,
             payload: error.response && error.response.data.detail 
