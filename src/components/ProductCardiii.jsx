@@ -31,14 +31,14 @@ const ProductCardiii = ({data}) => {
             <div className="bg-[#F5F5F5] overflow-y-hidden cursor-pointer h-[125px] lg:h-[250px]  w-[100%] relative flex flex-col justify-center items-center ">
                 <div className="flex justify-between items-center px-[2%] top-2 absolute w-[100%]">
                 {/* <span className='bg-[#067B35] px-[2px] py-[1px] text-[5px] lg:text-[12px] text-[#FAFAFA]'>New</span> */}
-                <span className='bg-[#FCB349] px-[2px] py-[1px] text-[5px] lg:text-[12px] text-[#FAFAFA]'>-{data.discount}%</span>
+                <span className='bg-[#FCB349] px-[2px] py-[1px] text-[5px] lg:text-[12px] text-[#FAFAFA]'>%</span>
                 <i className="p-[3px] bg-white rounded-full"><Heart className='w-[10px] h-[9px] lg:w-[20px] lg:h-[18px]' /></i>
                 </div>
                 <img className="w-[56px] h-[76px] lg:w-[142px] lg:h-[152px]" src={data.image} alt="" />
                 <button className="absolute -bottom-10  w-[100%] py-1 bg-[#FCB349] text-[#FFFFFF] text-[10px] lg:text-[20px]">Add To Cart</button>
             </div>
             <div className="mt-2 lg:mt-5">
-                <Link className='decoration-none' to={`/product/${data.id}`}>
+                <Link className='decoration-none' to={`/product/${data.category}`}>
                     <h4 className="text-[#080606] text-[8px] lg:text-[16px]">{data.title}</h4>
                 </Link>
                 <div className="flex flex-col gap-2 items-start lg:mt-4">
