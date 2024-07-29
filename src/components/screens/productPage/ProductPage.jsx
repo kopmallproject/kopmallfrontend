@@ -12,6 +12,7 @@ import { listProducts } from '../../../actions/productsActions'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../../Loader'
 import Message from '../../Message'
+import Category from '../../Category'
 
 const ProductPage = () => {
     const dispatch = useDispatch()
@@ -27,7 +28,7 @@ const ProductPage = () => {
        <Header2 />
 
        <div className="h-[100%] mt-20 lg:px-28 px-[5%] flex  gap-7">
-            <div className="category_div hidden max-h-[390px] lg:flex flex-col justify-between w-[20%] bg-[#25133A] p-5 text-[#FFFFFF]">
+            {/* <div className="category_div hidden max-h-[390px] lg:flex flex-col justify-between w-[20%] bg-[#25133A] p-5 text-[#FFFFFF]">
                 <div className="category_div_card">
                     <Smartphone />
                     <span>Phones & Tablets</span>
@@ -68,7 +69,8 @@ const ProductPage = () => {
                     <Shell />
                     <span>Other Categories</span>
                 </div>
-            </div>
+            </div> */}
+            <Category />
 
             
             {

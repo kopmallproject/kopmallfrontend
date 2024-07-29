@@ -1,11 +1,15 @@
 import axios from 'axios'
 import { PRODUCT_LIST_FAIL, PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS,
-     PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS } from '../constants/productsConstants'
+     PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, 
+     CATEGORY_LIST_REQUEST,
+     CATEGORY_LIST_FAIL,
+     CATEGORY_LIST_SUCCESS} from '../constants/productsConstants'
+     import { baseUrl } from "../components/baseUrl";
 
 export const listProducts = () => async (dispatch) => {
     try {
         dispatch({type: PRODUCT_LIST_REQUEST})
-        const {data} = await axios.get('https://fakestoreapi.com/products/');
+        const {data} = await axios.get(`${baseUrl}/stores/products`);
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
@@ -48,7 +52,7 @@ export const listProductDetails = (id) => async (dispatch) => {
 export const listCategories = () => async (dispatch) => {
     try {
         dispatch({type: CATEGORY_LIST_REQUEST})
-        const {data} = await axios.get(`${baseUrl}/api/stores/categories`);
+        const {data} = await axios.get(`${baseUrl}/stores/categories`);
 
         dispatch({
             type: CATEGORY_LIST_SUCCESS,
@@ -57,6 +61,7 @@ export const listCategories = () => async (dispatch) => {
         })
     }
     catch(error) {
+        console.error('category error:', error.response ? error.response.data : error.message);
         dispatch({
             type: CATEGORY_LIST_FAIL,
             payload: error.response && error.response.data.detail ? error.response.data.detail 

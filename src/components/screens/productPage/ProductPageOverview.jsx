@@ -68,12 +68,12 @@ const ProductPageOverview = ({params}) => {
                 <div className="div mt-4 lg:mt-0 lg:w-[400px] xl:w-[400px]">
                     <h3 className='text-[24px] font-semibold'>{product.title}</h3>
                     <div className="flex gap-4 items-center  mt-4">
-                        <div className="">{StarRating(product.rating.rate)}</div>
-                        <span className='text-[#000000] text-[14px] lg:text-[14px] font-weight-semibold opacity-8'>({product.rating.count}) Reviews</span>
+                        <div className="">{StarRating(4)}</div>
+                        <span className='text-[#000000] text-[14px] lg:text-[14px] font-weight-semibold opacity-8'>(56) Reviews</span>
                         <span className='text-[#000000] text-[14px] lg:text-[14px] font-weight-semibold opacity-8'>|</span>
                         <span className='text-[14px] text-[#000000] font-weight-semibold opacity-8'>In stock</span>
                     </div>
-                    <div className="div  text-left mt-4"><span className='text-[20px] font-medium'>${product.price}</span></div>
+                    <div className="div  text-left mt-4"><span className='text-[20px] font-medium'>${product.amount}</span></div>
                     <p className="mt-4 text-[14px] font-normal">{product.description}</p>
                     <div className="mt-4 flex flex-row justify-between items-center">
                         <div className='flex items-start flex-row'>

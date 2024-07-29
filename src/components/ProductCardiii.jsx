@@ -38,17 +38,17 @@ const ProductCardiii = ({data}) => {
                 <button className="absolute -bottom-10  w-[100%] py-1 bg-[#FCB349] text-[#FFFFFF] text-[10px] lg:text-[20px]">Add To Cart</button>
             </div>
             <div className="mt-2 lg:mt-5">
-                <Link className='decoration-none' to={`/product/${data.category}`}>
-                    <h4 className="text-[#080606] text-[8px] lg:text-[16px]">{data.title}</h4>
+                <Link className='decoration-none' to={`/product/${data.id}`}>
+                    <h4 className="text-[#080606] text-[8px] lg:text-[16px]">{data.name}</h4>
                 </Link>
                 <div className="flex flex-col gap-2 items-start lg:mt-4">
                     <div className='flex gap-2'>
-                        <span className="text-[#DB4444] text-[8px] lg:text-[16px]">$360</span>
+                        <span className="text-[#DB4444] text-[8px] lg:text-[16px]">${data.amount}</span>
                         <span className="text-[#000000] opacity-50 text text-[8px] lg:text-[16px]">${data.price}</span>
                     </div>
                     <div className="flex gap-2">
-                        <div className="">{StarRating(data.rating.rate)}</div>
-                        <span className='text-[#000000] text-[7px] lg:text-[14px] font-weight-semibold opacity-8'>({data.rating.count})</span>
+                        <div className="">{StarRating(4)}</div>
+                        <span className='text-[#000000] text-[7px] lg:text-[14px] font-weight-semibold opacity-8'>(5)</span>
                     </div>
                 </div>
             </div>
