@@ -7,10 +7,22 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { faPerson } from '@fortawesome/free-solid-svg-icons'
 import { faHamburger } from '@fortawesome/free-solid-svg-icons'
 import { Menu } from 'lucide-react'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../../actions/userAction'
+import { Link } from 'react-router-dom'
 
 
 
 const Header2 = () => {
+    const userLogin = useSelector(state => state.userLogin)
+    const {userInfo} = userLogin;
+    const dispatch = useDispatch()
+
+    console.log('user name', userInfo)
+
+    const logoutHandler=()=>{
+        dispatch(logout())
+    }
   return (
     <>
         <header className='w-full lg:h-28 h-14 lg:border-b-[1px] border-b-gray relative'>
@@ -75,23 +87,33 @@ const Header2 = () => {
                                 <span className='hidden lg:inline-block'>account</span>
                                 <FontAwesomeIcon icon={faArrowDown}  className="hidden lg:inline-block"/>
                             </a>
-                            <div className="sub_menu subMenu">
-                                <div className="card">
-                                    <a href="" className="">
-                                        <span className='text-md text-[#FCB349]'>Login</span>
-                                    </a>
+                            {userInfo ? (
+                                <div className="sub_menu subMenu">
+                                    <span>Welcome {userInfo.name}</span>
+                                    <div className="card">
+                                        <a onClick={logoutHandler} className="">
+                                            <span className='text-md text-[#FCB349]'>Logout</span>
+                                        </a>
+                                    </div>
+                                    
                                 </div>
-                                <div className="card">
-                                    <a href="" className="">
-                                        <span className='text-md text-[#FCB349]'>Lorem</span>
-                                    </a>
+                            ) : (
+                                <div className="sub_menu subMenu">
+                                    <span>New User?</span>
+                                    <div className="card">
+                                        <Link to="/login" className="">
+                                            <span className='text-md text-[#FCB349]'>Login</span>
+                                        </Link>
+                                    </div>
+                                    <div className="card">
+                                        <Link to="/signup" className="">
+                                            <span className='text-md text-[#FCB349]'>Signup</span>
+                                        </Link>
+                                    </div>
+                                    
                                 </div>
-                                <div className="card">
-                                    <a href="" className="">
-                                        <span className='text-md text-[#FCB349]'>Lorem</span>
-                                    </a>
-                                </div>
-                            </div>
+                            )}
+                            
                         </li>
                     </ul>
                 </div>

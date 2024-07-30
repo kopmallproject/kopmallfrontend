@@ -26,10 +26,12 @@ const Category = () => {
                 ) : (
                     <div className="card_wrapper w-[100%] lg:w-[80%] flex flex-row flex-wrap gap-3">
                         {categories.map(cat => (
-                            <div key={cat.id} className="category_div_card">
+                            <Link key={cat.id} className="category_div_card" to={`/store/${cat.id}`}>
+                                
                                 <Smartphone />
                                 <span>{cat.name}</span>
-                            </div>
+                                
+                            </Link>
                         ))}
                     </div>
                 )

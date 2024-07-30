@@ -60,7 +60,7 @@ export const login = (email, password) => async(dispatch) => {
 
     try {
         dispatch({
-            type: USER_SIGNUP_REQUEST
+            type: USER_LOGIN_REQUEST
         })
 
         const config={
@@ -70,17 +70,18 @@ export const login = (email, password) => async(dispatch) => {
         }
 
         const payload = {
-            username: email,
+            email: email,
             password: password
         };
 
         console.log('Sending payload:', payload);
 
-        const {data} = await axios.post(`${baseUrl}/api/users/login`, payload, config)
+        const {data} = await axios.post(`${baseUrl}/token/pair`, payload, config)
         dispatch({
             type:USER_LOGIN_SUCCESS,
             payload:data
         })
+
 
         localStorage.setItem('userInfo', JSON.stringify(data))
     }
@@ -98,6 +99,11 @@ export const login = (email, password) => async(dispatch) => {
 
 
 
+}
+
+export const logout=()=>(dispatch)=> {
+    localStorage.removeItem('userInfo')
+    dispatch({type:USER_LOGOUT})
 }
 
 

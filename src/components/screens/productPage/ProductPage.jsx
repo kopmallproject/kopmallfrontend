@@ -14,14 +14,15 @@ import Loader from '../../Loader'
 import Message from '../../Message'
 import Category from '../../Category'
 
-const ProductPage = () => {
+const ProductPage = ({params}) => {
+    const {id} = useParams()
     const dispatch = useDispatch()
     const productsList = useSelector((state) => state.productsList);
     const {error, loading, products} = productsList
 
     useEffect(() => {
-        dispatch(listProducts())
-    }, [dispatch])
+        dispatch(listProducts(id))
+    }, [dispatch, params, id])
 
   return (
     <>
