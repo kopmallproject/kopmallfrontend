@@ -41,11 +41,13 @@ export const listProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({type: PRODUCT_DETAILS_REQUEST})
         const {data} = await axios.get(`${baseUrl}/stores/${id}/products`);
-
+        console.log("actions", data )
+        data["stockCount"] = 20
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
             // payload:data[0]
             payload: data
+            
         })
     }
     catch(error) {

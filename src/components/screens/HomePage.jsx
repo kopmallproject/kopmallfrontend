@@ -10,6 +10,7 @@ import {IconProp} from '@fortawesome/fontawesome-svg-core'
 import ProductCard from '../ProductCard'
 import ProductCardii from '../ProductCardii'
 import { flash_sales, logos, products } from '../../data'
+import Category from '../Category'
 
 const slideImg ="assets/Slider_1.png"
 
@@ -27,7 +28,7 @@ const HomePage = () => {
         <FontAwesomeIcon icon={faCoffee} /> */}
         <Header2 />
         <div className='mt-20 lg:px-28 px-[5%] h-[140px] lg:h-[345px] flex space-between'> 
-          <div className="category_div hidden lg:flex flex-col justify-between w-[25%] bg-[#25133A] p-5 text-[#FFFFFF]">
+          {/* <div className="category_div hidden lg:flex flex-col justify-between w-[25%] bg-[#25133A] p-5 text-[#FFFFFF]">
             <div className="category_div_card">
               <Smartphone />
               <span>Phones & Tablets</span>
@@ -68,7 +69,8 @@ const HomePage = () => {
               <Shell />
               <span>Other Categories</span>
             </div>
-          </div>
+          </div> */}
+          <Category />
           <div className='w-[90%] lg:w-[72%]' style={{ height: "100%", margin: "0 auto"}}>
             <ImageSlider imageUrls={IMAGES} />
           </div>

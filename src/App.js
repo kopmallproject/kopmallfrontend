@@ -51,7 +51,7 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route exact path='/cart' element={<CartPage /> }></Route>
+          <Route exact path='/cart/:id?' element={<CartPage /> }></Route>
         </Routes>
 
         <Routes>
