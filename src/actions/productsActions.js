@@ -11,15 +11,17 @@ export const listProducts = (id) => async (dispatch) => {
     try {
         dispatch({type: PRODUCT_LIST_REQUEST})
         const {data} = await axios.get(`${baseUrl}/stores/${id}/products/category`);
-        // let data;
-        // if (id === 0) {
+        // let data = {};
+        // if (id === '0') {
         //     const {response} = await axios.get(`${baseUrl}/stores/products`);
         //     data = response
         // } else {
         //     const {response} = await axios.get(`${baseUrl}/stores/${id}/products/category`);
         //     data = response
         // }
+        
         console.log('data', data)
+        
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,

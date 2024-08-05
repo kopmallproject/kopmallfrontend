@@ -18,6 +18,9 @@ const Header2 = () => {
     const {userInfo} = userLogin;
     const dispatch = useDispatch()
 
+    const cart = useSelector(state => state.cart)
+    const { cartItems } = cart
+
     console.log('user name', userInfo)
 
     const logoutHandler=()=>{
@@ -77,9 +80,14 @@ const Header2 = () => {
                         </li>
                         <li className='relative'>
                             <FontAwesomeIcon icon={faCartShopping} className='lg:hidden'/>
-                            <span className='hidden lg:inline-block'>Cart</span>
+                            <Link to="/store/2" className='text-[#000000]'><span className='hidden lg:inline-block'>Shop</span></Link>
+                            
+                        </li>
+                        <li className='relative'>
+                            <FontAwesomeIcon icon={faCartShopping} className='lg:hidden'/>
+                            <Link to="/cart" className='text-[#000000]'><span className='hidden lg:inline-block'>Cart</span></Link>
                             <span className='w-4 h-4 bg-slate-400 text-white rounded-full 
-                                absolute left-0 -bottom-2 text-xs flex items-center justify-center'>5</span>
+                                absolute left-0 -bottom-2 text-xs flex items-center justify-center'>{cartItems.length}</span>
                         </li>
                         <li className='links relative'>
                             <a href="#" className="flex gap-1 items-center text-[#000000]">
