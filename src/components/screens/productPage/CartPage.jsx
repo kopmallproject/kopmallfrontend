@@ -92,7 +92,7 @@ const CartPage = () => {
                       <div className="mt-5">
                         <div className="px-4 pb-3 flex flex-row justify-between border-b-[1px] border-solid border-[#0000004D]">
                           <span className="text-[20px] font-normal">SubTotal</span>
-                          <span className="text-[16px] font-normal">${subTotal}</span>
+                          <span className="text-[16px] font-normal">π{subTotal}</span>
                         </div>
                         <div className='flex flex-col items-center'><button className="w-[329px] mx-auto mt-5 rounded-lg text-[#25133A] text-[20px] py-3 bg-[#FCB349]" onClick={checkoutHandler}>CHECKOUT <span>(${subTotal})</span></button></div>
                       </div>

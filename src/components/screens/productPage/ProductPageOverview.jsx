@@ -102,7 +102,7 @@ const ProductPageOverview = ({params}) => {
                                     <span className='text-[#000000] text-[14px] lg:text-[14px] font-weight-semibold opacity-8'>|</span>
                                     <span className='text-[14px] text-[#000000] font-weight-semibold opacity-8'>{product.is_available ? "In stock" : "Out of stock"}</span>
                                 </div>
-                                <div className="div  text-left mt-4"><span className='text-[20px] font-medium'>${product.amount}</span></div>
+                                <div className="div  text-left mt-4"><span className='text-[20px] font-medium'>π{product.amount}</span></div>
                                 <p className="mt-4 text-[14px] font-normal">{product.description}</p>
                                 <div className="mt-4 flex flex-row justify-between items-center">
                                     <div className='flex items-start flex-row'>

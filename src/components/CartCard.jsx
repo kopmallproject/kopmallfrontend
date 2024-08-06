@@ -45,7 +45,7 @@ const CartCard = ({data, removeFromCartHandler}) => {
                         </div>
                     </div>
                 </div>
-                <div className="div  text-right"><span className='text-[20px] font-medium'>${data.price}</span></div>
+                <div className="div  text-right"><span className='text-[20px] font-medium'>π{data.price}</span></div>
             </div>
             <div className="flex flex-row items-center justify-between">
                 <div onClick={() => removeFromCartHandler(data.product)} className="flex flex-row items-center gap-2">

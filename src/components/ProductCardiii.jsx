@@ -43,8 +43,8 @@ const ProductCardiii = ({data}) => {
                 </Link>
                 <div className="flex flex-col gap-2 items-start lg:mt-4">
                     <div className='flex gap-2'>
-                        <span className="text-[#DB4444] text-[8px] lg:text-[16px]">${data.amount}</span>
-                        <span className="text-[#000000] opacity-50 text text-[8px] lg:text-[16px]">${data.price}</span>
+                        <span className="text-[#DB4444] text-[8px] lg:text-[16px]">π{data.amount}</span>
+                        <span className="text-[#000000] opacity-50 text text-[8px] lg:text-[16px]">π{data.price}</span>
                     </div>
                     <div className="flex gap-2">
                         <div className="">{StarRating(4)}</div>

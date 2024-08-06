@@ -38,7 +38,7 @@ const ProductCard = ({product}) => {
             <div className="mt-2 lg:mt-5">
                 <h4 className="text-[#080606] text-[8px] lg:text-[16px]">{product.name}</h4>
                 <div className="flex gap-2 items-center lg:mt-4">
-                    <span className="text-[#DB4444] text-[8px] lg:text-[16px]">${product.price}</span>
+                    <span className="text-[#DB4444] text-[8px] lg:text-[16px]">π{product.price}</span>
                     <div className="">{StarRating(product.rating)}</div>
                     <span className='text-[#000000] text-[7px] lg:text-[14px] font-weight-semibold opacity-8'>({product.reviews})</span>
                 </div>
